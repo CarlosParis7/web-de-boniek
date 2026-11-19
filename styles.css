@@ -237,6 +237,15 @@ em { font-style: italic; font-family: var(--font-serif); font-weight: 500; color
 /* WORK */
 .work { padding: 15vw 0; }
 
+/* POLLERA: va justo después del portafolio, así que sin doble espacio arriba */
+.work.pollera { padding-top: 0; }
+.section-intro { color: var(--text-muted); font-weight: 300; max-width: 52ch; margin: 1.5rem auto 0; font-size: clamp(1rem, 1.2vw, 1.15rem); }
+/* Con pocas fotos, centrarlas en escritorio en vez de dejarlas pegadas a la izquierda */
+@media (min-width: 1025px) {
+    .pollera .work-item:only-child { grid-column: 5 / span 4; }
+    .pollera .work-item:first-child:nth-last-child(2) { grid-column: 3 / span 4; }
+}
+
 .masonry-grid {
     display: grid;
     grid-template-columns: repeat(12, 1fr);

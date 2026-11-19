@@ -114,6 +114,21 @@ const portfolioData = [
     }
 ];
 
+// SECCIÓN POLLERA: mismas reglas que portfolioData. Para añadir fotos, copia un bloque y cambia los datos.
+// Cada foto necesita sus 3 tamaños en /images (nombre-600.webp, nombre.webp, nombre-1600.webp).
+const polleraData = [
+    {
+        id: 101,
+        title_es: "Pollera",
+        title_en: "Pollera",
+        location_es: "Panamá",
+        location_en: "Panama",
+        image: "./images/tipico-1.webp",
+        size: "vertical",
+        offset: ""
+    }
+];
+
 // Ancho que ocupa cada foto en pantalla: el navegador elige el archivo justo (600, 1000 o 1600px)
 const SIZES = {
     vertical:   '(max-width: 768px) 92vw, (max-width: 1024px) 46vw, 34vw',
@@ -124,12 +139,17 @@ const SIZES = {
 const VIEW_ICON =`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>`;
 
 function renderPortfolioGrid() {
-    const grid = document.querySelector('.masonry-grid');
+    renderGallery('[data-gallery="portfolio"]', portfolioData);
+    renderGallery('[data-gallery="pollera"]', polleraData);
+}
+
+function renderGallery(selector, data) {
+    const grid = document.querySelector(selector);
     if (!grid) return;
 
     grid.innerHTML = '';
 
-    portfolioData.forEach((item) => {
+    data.forEach((item) => {
         const baseClass = item.hidden
             ? `work-item ${item.size} magnetic-wrap hidden-item`
             : `work-item ${item.size} magnetic-wrap`;
