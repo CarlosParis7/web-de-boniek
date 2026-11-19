@@ -1,0 +1,4 @@
+# Netlify: los navegadores guardan las fotos 30 días en caché.
+# Si reemplazas una foto, mejor súbela con otro nombre para que se vea al momento.
+/images/*
+  Cache-Control: public, max-age=2592000

@@ -149,7 +149,7 @@ function renderPortfolioGrid() {
 
     attachLightboxListeners();
     attachMagneticEffect();
-    lucide.createIcons();
+    createIcons();
 
     if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
         gsap.utils.toArray('.img-wrapper').forEach(wrapper => {

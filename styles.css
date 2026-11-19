@@ -541,7 +541,6 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 
     /* HERO móvil: usar foto vertical de Boniek centrada */
     .hero { padding: 6vw 6vw 8vw; }
-    .hero-image { background-image: url('./images/foto-hero-movil.jpg') !important; background-position: center top; }
     .hero-gradient { background: linear-gradient(to top, var(--bg-dark) 0%, rgba(7,7,8,0.55) 30%, rgba(7,7,8,0.1) 60%, rgba(0,0,0,0.35) 100%); }
     .hero-title { font-size: clamp(2.8rem, 13vw, 4.5rem); line-height: 0.95; }
     .hero-subtitle { font-size: 1rem; max-width: 100%; }

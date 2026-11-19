@@ -1,4 +1,25 @@
-lucide.createIcons();
+// Iconos (antes lucide@latest desde unpkg, ~400KB). Solo los 11 que usa la web.
+const ICONS = {
+    'x': '<path d="M18 6 6 18"/><path d="m6 6 12 12"/>',
+    'plus': '<path d="M5 12h14"/><path d="M12 5v14"/>',
+    'image': '<rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/>',
+    'heart': '<path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>',
+    'download': '<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/>',
+    'share-2': '<circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" x2="15.42" y1="13.51" y2="17.49"/><line x1="15.41" x2="8.59" y1="6.51" y2="10.49"/>',
+    'quote': '<path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/>',
+    'map-pin': '<path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>',
+    'chevron-down': '<path d="m6 9 6 6 6-6"/>',
+    'calendar': '<rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/>',
+    'arrow-right': '<path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>'
+};
+function createIcons() {
+    document.querySelectorAll('i[data-lucide]').forEach(el => {
+        const name = el.getAttribute('data-lucide');
+        if (!ICONS[name]) return;
+        el.outerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-${name} ${el.className}" aria-hidden="true">${ICONS[name]}</svg>`;
+    });
+}
+createIcons();
 gsap.registerPlugin(ScrollTrigger);
 
 // ACCESIBILIDAD: si el usuario pide menos movimiento, los reveals de GSAP
@@ -312,7 +333,7 @@ function setLanguage(lang) {
     });
 
     // Re-create icons for navigation elements that had nested icons updated
-    lucide.createIcons();
+    createIcons();
 }
 
 const langToggle = document.querySelector('.lang-toggle');
@@ -508,14 +529,15 @@ document.addEventListener('keydown', (e) => {
 attachLightboxListeners();
 
 // LOADER
-window.addEventListener('load', () => {
+// Antes esperaba a window 'load' (TODAS las fotos y scripts). Ahora solo a la foto del hero.
+function startIntro() {
     window.scrollTo(0, 0);
     if (REDUCE_MOTION) { settleReducedMotion(); return; }
     const tl = gsap.timeline();
 
-    tl.to('.loader-text', { opacity: 1, y: 0, duration: 1.2, ease: "power3.out" })
-      .to('.loader-text', { opacity: 0, duration: 0.8, delay: 0.5, ease: "power2.inOut" })
-      .to('.loader', { yPercent: -100, duration: 1.2, ease: "expo.inOut" }, "-=0.3")
+    tl.to('.loader-text', { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" })
+      .to('.loader-text', { opacity: 0, duration: 0.5, delay: 0.2, ease: "power2.inOut" })
+      .to('.loader', { yPercent: -100, duration: 1, ease: "expo.inOut" }, "-=0.3")
       .from('.hero-image', { scale: 1.3, duration: 2, ease: "expo.out" }, "-=0.8")
       .fromTo('.hero-title', 
           { clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)', y: 50 },
@@ -527,7 +549,10 @@ window.addEventListener('load', () => {
       .add(() => {
           document.body.classList.remove('loading');
       });
-});
+}
+const heroImg = document.querySelector('.hero-image');
+// decode() falla si la imagen da error; arrancamos igual para no dejar el loader colgado
+(heroImg ? heroImg.decode().catch(() => {}) : Promise.resolve()).then(startIntro);
 
 // REVEALS & PARALLAX
 if (!REDUCE_MOTION) {

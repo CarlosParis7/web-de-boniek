@@ -17,3 +17,6 @@ images/_originales/
 # Sistema
 .DS_Store
 Thumbs.db
+
+# Config local de Claude
+.claude/
