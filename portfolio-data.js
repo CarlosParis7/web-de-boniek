@@ -44,8 +44,8 @@ const portfolioData = [
     },
     {
         id: 5,
-        title_es: "Traje Típico",
-        title_en: "Traditional",
+        title_es: "Pollera",
+        title_en: "Pollera",
         location_es: "Panamá",
         location_en: "Panama",
         image: "./images/tipico-1.webp",
