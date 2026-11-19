@@ -1,0 +1,19 @@
+# Local Netlify folder
+.netlify
+
+# Logs locales
+server.log
+*.log
+
+# Dependencias (sharp se usó solo para optimizar imágenes, no es parte del sitio)
+node_modules/
+package.json
+package-lock.json
+
+# Backups locales
+.backup-*/
+images/_originales/
+
+# Sistema
+.DS_Store
+Thumbs.db

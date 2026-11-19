@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="es" class="lenis lenis-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boniek Aparicio | Fotógrafo Profesional en Panamá</title>
+    <meta name="description" content="Boniek Aparicio, fotógrafo profesional en Ciudad de Panamá. Bodas, retratos, maternidad, parejas y sesiones familiares. Estudio en Plaza Cantabria. Reserva tu sesión.">
+    <meta name="keywords" content="fotógrafo Panamá, fotografía bodas Panamá, sesión de fotos Panamá, fotógrafo profesional, Boniek Aparicio, fotografía maternidad, retratos">
+    <meta name="author" content="Boniek Aparicio">
+    <!-- Open Graph (redes sociales) -->
+    <meta property="og:title" content="Boniek Aparicio | Fotógrafo Profesional en Panamá">
+    <meta property="og:description" content="Bodas, retratos, maternidad y más. Capturo lo que de verdad importa: tu gente, tu historia, tu momento.">
+    <meta property="og:image" content="./images/foto-hero.webp">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_PA">
+    <link rel="icon" type="image/png" href="./images/fotografo-principal.webp">
+    <link rel="stylesheet" href="styles.css?v=8">
+    <!-- Preload imagen del Hero (acelera la carga visible) -->
+    <link rel="preload" as="image" href="./images/foto-hero.webp" media="(min-width: 769px)">
+    <link rel="preload" as="image" href="./images/foto-hero-movil.webp" media="(max-width: 768px)">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Preconnect a CDNs de scripts (descarga más rápida) -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://unpkg.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Manrope:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Scripts con defer: no bloquean el render, mantienen orden de ejecución -->
+    <script defer src="https://unpkg.com/lucide@latest"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script defer src="https://unpkg.com/@studio-freight/lenis@1.0.32/dist/lenis.min.js"></script>
+</head>
+<body class="loading">
+    <div class="noise-overlay"></div>
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+
+    <!-- Lightbox -->
+    <div class="lightbox">
+        <div class="lightbox-close magnetic" data-strength="20"><i data-lucide="x"></i></div>
+        <img src="" alt="Enlarged Work">
+    </div>
+
+
+
+
+
+    <!-- Loader -->
+    <div class="loader">
+        <h1 class="loader-text serif">Boniek Aparicio</h1>
+    </div>
+
+    <!-- Camera Flash & Focus -->
+    <div class="camera-flash"></div>
+    <div class="focus-brackets">
+        <div class="bracket top-left"></div>
+        <div class="bracket top-right"></div>
+        <div class="bracket bottom-left"></div>
+        <div class="bracket bottom-right"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav-minimal">
+        <div class="nav-brand magnetic" data-strength="20" data-i18n="brand">Boniek Aparicio</div>
+        <div class="nav-links">
+            <a href="#work" class="magnetic" data-strength="15" data-i18n="portfolio">Portafolio</a>
+            <a href="#about" class="magnetic" data-strength="15" data-i18n="studio">Sobre mí</a>
+            <a href="#portal" class="magnetic" data-strength="15" data-i18n="portal">Portal Privado</a>
+        </div>
+        <div class="nav-controls">
+            <button class="lang-toggle magnetic" data-strength="15">EN</button>
+            <a href="#booking" class="nav-btn magnetic" data-strength="20" data-i18n="book">Reservar Sesión</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero" id="hero">
+        <div class="hero-image-container">
+            <picture>
+                <source media="(max-width: 768px)" srcset="./images/foto-hero-movil.webp" type="image/webp">
+                <source media="(min-width: 769px)" srcset="./images/foto-hero.webp" type="image/webp">
+                <img src="./images/foto-hero.jpg" alt="Boniek Aparicio Fotografía" class="hero-image" fetchpriority="high" decoding="async">
+            </picture>
+            <div class="hero-gradient"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-text-wrapper">
+                <h1 class="hero-title serif split-text" data-i18n="hero_title">Tus momentos,<br><em>para siempre.</em></h1>
+                <p class="hero-subtitle" data-i18n="hero_subtitle">Soy Boniek Aparicio, fotógrafo en Panamá. Capturo lo que de verdad importa: tu gente, tu historia, tu momento.</p>
+            </div>
+            <div class="hero-bottom">
+                <div class="hero-cta">
+                    <a href="#work" class="btn-outline magnetic" data-strength="30" data-i18n="hero_btn_portfolio">Ver Portafolio</a>
+                    <a href="#booking" class="btn-solid magnetic" data-strength="30" data-i18n="hero_btn_book">Reservar Sesión</a>
+                </div>
+                <div class="hero-scroll-indicator">
+                    <span data-i18n="hero_scroll">Desliza para explorar</span>
+                    <div class="scroll-line"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Featured Work -->
+    <section class="work" id="work">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="serif" data-i18n="work_title">Algunos de mis trabajos</h2>
+            </div>
+            <div class="masonry-grid">
+                <!-- Cargado dinámicamente desde portfolio-data.js -->
+            </div>
+            <div class="work-more-trigger" style="display: none;">
+                <button class="btn-more magnetic" data-strength="15">
+                    <span data-i18n="work_more">Ver Más Archivos</span>
+                    <i data-lucide="plus"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Studio -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-split">
+                <div class="about-image-col">
+                    <div class="about-img-wrapper" data-speed="0.9">
+                        <img src="./images/foto-footer.webp" alt="Boniek Aparicio - Fotógrafo Profesional en Panamá" loading="lazy">
+                        <div class="photographer-badge">
+                            <span class="badge-name serif">Boniek Aparicio</span>
+                            <span class="badge-role">Fotógrafo Profesional</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-content-col">
+                    <h2 class="serif" data-i18n="about_title">Más que fotos, <em>recuerdos</em> que perduran.</h2>
+                    <p class="about-body" data-i18n="about_body">Soy Boniek Aparicio, fotógrafo panameño. Me encanta capturar esos momentos reales: una sonrisa, una mirada, un abrazo. Detrás de cada foto hay una historia, y mi trabajo es contarla tal como pasó, sin poses forzadas. Vamos a crear recuerdos que de verdad valgan la pena.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Experience Timeline -->
+    <section class="experience" id="experience">
+        <div class="container">
+            <div class="section-header center">
+                <span class="eyebrow" data-i18n="process_eyebrow">Cómo trabajo</span>
+                <h2 class="serif" data-i18n="process_title">Así de fácil es trabajar conmigo</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-line"></div>
+                <div class="timeline-item">
+                    <div class="timeline-node">01</div>
+                    <div class="timeline-content">
+                        <h3 data-i18n="step_1_title">Hablamos</h3>
+                        <p data-i18n="step_1_desc">Me cuentas qué tienes en mente, para qué es la sesión y cómo te gustaría que salieran las fotos. Sin compromiso.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-node">02</div>
+                    <div class="timeline-content">
+                        <h3 data-i18n="step_2_title">Planeamos</h3>
+                        <p data-i18n="step_2_desc">Escogemos juntos el lugar, la fecha y los detalles. Te oriento con todo para que llegues tranquilo el día de la sesión.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-node">03</div>
+                    <div class="timeline-content">
+                        <h3 data-i18n="step_3_title">La sesión de fotos</h3>
+                        <p data-i18n="step_3_desc">El día llegó. Nos relajamos, nos reímos y disfrutamos. Yo me encargo de capturar los momentos sin que tengas que posar a la fuerza.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-node">04</div>
+                    <div class="timeline-content">
+                        <h3 data-i18n="step_4_title">Recibes tus fotos</h3>
+                        <p data-i18n="step_4_desc">Edito cada foto con cuidado y te las entrego listas para que las disfrutes, las compartas y las guardes para siempre.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Private Client Portal Preview -->
+    <section class="portal" id="portal">
+        <div class="container">
+            <div class="portal-header">
+                <div class="portal-title">
+                    <h2 class="serif" data-i18n="portal_title">Tu Galería Privada</h2>
+                    <p data-i18n="portal_desc">Cuando termino de editar, subo todas tus fotos a una galería privada para que las veas, descargues y compartas cuando quieras, desde donde sea.</p>
+                </div>
+            </div>
+            <div class="portal-mockup">
+                <div class="mockup-frame">
+                    <div class="mockup-sidebar">
+                        <div class="mockup-logo">Boniek Aparicio</div>
+                        <ul class="mockup-nav">
+                            <li class="active" data-i18n="portal_nav_coll"><i data-lucide="image"></i> Colección</li>
+                            <li data-i18n="portal_nav_fav"><i data-lucide="heart"></i> Favoritos</li>
+                            <li data-i18n="portal_nav_dl"><i data-lucide="download"></i> Descargar Todo</li>
+                            <li data-i18n="portal_nav_share"><i data-lucide="share-2"></i> Compartir Seguro</li>
+                        </ul>
+                    </div>
+                    <div class="mockup-main">
+                        <div class="mockup-header">
+                            <div>
+                                <h4 data-i18n="portal_main_title">Carpeta de Fotografías</h4>
+                                <span data-i18n="portal_main_desc">Tus mejores momentos &middot; Listas para descargar</span>
+                            </div>
+                            <button class="mockup-btn" data-i18n="portal_btn_slideshow">Presentación</button>
+                        </div>
+                        <div class="mockup-grid">
+                            <div class="mockup-img" style="background-image: url('./images/boda-1.webp')"></div>
+                            <div class="mockup-img" style="background-image: url('./images/ninos-1.webp')"></div>
+                            <div class="mockup-img" style="background-image: url('./images/retrato-1.webp')"></div>
+                            <div class="mockup-img" style="background-image: url('./images/familia-1.webp')"></div>
+                            <div class="mockup-img" style="background-image: url('./images/tipico-1.webp')"></div>
+                            <div class="mockup-img" style="background-image: url('./images/maternidad-1.webp')"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="glow-orb"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="testimonial-wrapper">
+                <i data-lucide="quote" class="quote-icon"></i>
+                <p class="quote-text serif split-text-quote" data-i18n="quote">"Boniek nos hizo sentir en confianza desde el primer momento. Nada de poses tiesas, puras risas y naturalidad. Las fotos quedaron brutales, tal cual vivimos ese día."</p>
+                <div class="quote-author">
+                    <span class="name">Valeria & Andrés</span>
+                    <span class="detail" data-i18n="quote_author_detail">Boda en Casco Antiguo, Ciudad de Panamá</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Counter Section -->
+    <section class="stats-section" id="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number" data-target="300">0</span><span class="stat-suffix">+</span>
+                    <span class="stat-label" data-i18n="stat_clients">Clientes Felices</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="5">0</span>
+                    <span class="stat-label" data-i18n="stat_years">Años de Experiencia</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="1200">0</span><span class="stat-suffix">+</span>
+                    <span class="stat-label" data-i18n="stat_sessions">Sesiones Realizadas</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="100">0</span><span class="stat-suffix">%</span>
+                    <span class="stat-label" data-i18n="stat_satisfaction">Satisfacción Garantizada</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking -->
+    <section class="booking" id="booking">
+        <div class="container">
+            <div class="booking-grid">
+                <div class="booking-text">
+                    <span class="eyebrow" data-i18n="booking_eyebrow">Consultas</span>
+                    <h2 class="serif" data-i18n="booking_title">Reserva<br>tu sesión.</h2>
+                    <p data-i18n="booking_desc">Cuéntame qué tienes en mente y te respondo lo antes posible. Escríbeme por aquí o por WhatsApp y vemos juntos cómo capturar tu momento.</p>
+                    <div class="studio-location">
+                        <i data-lucide="map-pin"></i>
+                        <div>
+                            <span class="location-label" data-i18n="studio_label">El Estudio</span>
+                            <span class="location-value">Plaza Cantabria, Ciudad de Panamá</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="booking-form-wrapper">
+                    <form class="premium-form" method="POST">
+                        <div class="form-row">
+                            <div class="input-group">
+                                <label for="name" data-i18n="form_name">Nombre</label>
+                                <input type="text" id="name" name="name" placeholder="Tu nombre" data-i18n-placeholder="form_name_ph" required>
+                            </div>
+                            <div class="input-group">
+                                <label for="email" data-i18n="form_email">Correo</label>
+                                <input type="email" id="email" name="email" placeholder="tu@correo.com" data-i18n-placeholder="form_email_ph" required>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label for="interest" data-i18n="form_interest">Área de Interés</label>
+                            <div class="custom-select">
+                                <select id="interest" name="interest" required>
+                                    <option value="" disabled selected data-i18n="form_interest_ph">Selecciona un tipo de sesión</option>
+                                    <option value="editorial" data-i18n="form_opt_editorial">Retrato Editorial</option>
+                                    <option value="wedding" data-i18n="form_opt_wedding">Boda de Lujo</option>
+                                    <option value="commercial" data-i18n="form_opt_commercial">Comercial / Moda</option>
+                                </select>
+                                <i data-lucide="chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label for="date" data-i18n="form_date">Fecha Estimada</label>
+                            <div class="date-input">
+                                <i data-lucide="calendar"></i>
+                                <input type="date" id="date" name="date" placeholder="Seleccionar fecha" data-i18n-placeholder="form_date_ph">
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label for="details" data-i18n="form_details">Detalles del Proyecto</label>
+                            <textarea id="details" name="details" rows="3" placeholder="Cuéntanos sobre tu visión..." data-i18n-placeholder="form_details_ph" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit magnetic" data-strength="20">
+                            <span data-i18n="form_submit">Enviar Consulta</span>
+                            <i data-lucide="arrow-right"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="final-cta">
+        <div class="container">
+            <div class="footer-brand-mark">
+                <span class="footer-shimmer-name serif">Boniek Aparicio</span>
+                <span class="footer-shimmer-role">Fotografía</span>
+            </div>
+            <h2 class="serif massive-text reveal-text" data-i18n="footer_massive">Tu historia merece<br><em>más</em> que lo ordinario.</h2>
+            <div class="footer-bottom">
+                <p><span data-i18n="footer_rights">&copy; 2026 Boniek Aparicio. Todos los derechos reservados.</span><br><span class="footer-location" style="opacity: 0.6; font-size: 0.85em;">Plaza Cantabria, Ciudad de Panamá</span></p>
+                <div class="footer-links">
+                    <a href="https://instagram.com/boniekapariciophotos" target="_blank" class="magnetic" data-strength="10" style="display: inline-flex; align-items: center; gap: 0.4rem;">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color: #fff;"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>Instagram
+                    </a>
+                    <a href="https://wa.me/50769200753" target="_blank" class="magnetic" data-strength="10" style="display: inline-flex; align-items: center; gap: 0.4rem;">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" style="color: #fff;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.458 5.704 1.459h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Badge -->
+    <a href="https://wa.me/50769200753?text=Hola%20Boniek%2C%20vi%20tu%20p%C3%A1gina%20y%20me%20gustar%C3%ADa%20reservar%20una%20sesi%C3%B3n%20de%20fotos." target="_blank" class="floating-wa magnetic" data-strength="30" aria-label="Contactar por WhatsApp">
+        <div class="wa-text-ring">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <path id="circlePath" d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" fill="transparent" />
+                <text>
+                    <textPath href="#circlePath" startOffset="0%" class="wa-text">
+                        FOTOGRAFÍAS PROFESIONALES •
+                    </textPath>
+                </text>
+            </svg>
+        </div>
+        <div class="wa-icon">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="color: #fff;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.458 5.704 1.459h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </div>
+    </a>
+
+    <script defer src="portfolio-data.js?v=8"></script>
+    <script defer src="script.js?v=8"></script>
+</body>
+</html>
