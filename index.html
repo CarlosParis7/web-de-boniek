@@ -10,25 +10,43 @@
     <!-- Open Graph (redes sociales) -->
     <meta property="og:title" content="Boniek Aparicio | Fotógrafo Profesional en Panamá">
     <meta property="og:description" content="Bodas, retratos, maternidad y más. Capturo lo que de verdad importa: tu gente, tu historia, tu momento.">
-    <meta property="og:image" content="./images/foto-hero.webp">
+    <meta property="og:image" content="https://boniekapariciophotos.com/images/foto-hero.jpg">
+    <meta property="og:image:width" content="2400">
+    <meta property="og:image:height" content="1350">
+    <meta property="og:url" content="https://boniekapariciophotos.com/">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="es_PA">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#070708">
+    <link rel="canonical" href="https://boniekapariciophotos.com/">
     <link rel="icon" type="image/png" href="./images/favicon.png">
-    <link rel="stylesheet" href="styles.css?v=10">
+    <link rel="apple-touch-icon" href="./images/apple-touch-icon.png">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Boniek Aparicio Fotografía",
+        "description": "Fotógrafo profesional en Ciudad de Panamá: bodas, retratos, maternidad, parejas y sesiones familiares.",
+        "url": "https://boniekapariciophotos.com/",
+        "image": "https://boniekapariciophotos.com/images/foto-hero.jpg",
+        "telephone": "+50769200753",
+        "address": { "@type": "PostalAddress", "streetAddress": "Plaza Cantabria", "addressLocality": "Ciudad de Panamá", "addressCountry": "PA" },
+        "areaServed": "Panamá",
+        "sameAs": ["https://instagram.com/boniekapariciophotos"]
+    }
+    </script>
+    <link rel="stylesheet" href="styles.css?v=11">
     <!-- Preload imagen del Hero (acelera la carga visible) -->
     <link rel="preload" as="image" href="./images/foto-hero.webp" media="(min-width: 769px)">
     <link rel="preload" as="image" href="./images/foto-hero-movil.webp" media="(max-width: 768px)">
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Preconnect a CDNs de scripts (descarga más rápida) -->
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-    <link rel="preconnect" href="https://unpkg.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Manrope:wght@200;300;400;500;600&display=swap" rel="stylesheet">
-    <!-- Scripts con defer: no bloquean el render, mantienen orden de ejecución -->
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script defer src="https://unpkg.com/@studio-freight/lenis@1.0.32/dist/lenis.min.js"></script>
+    <!-- Librerías alojadas en la propia web (más rápido y sin depender de CDNs externos) -->
+    <script defer src="vendor/gsap.min.js"></script>
+    <script defer src="vendor/ScrollTrigger.min.js"></script>
+    <script defer src="vendor/lenis.min.js"></script>
 </head>
 <body class="loading">
     <div class="noise-overlay"></div>
@@ -329,23 +347,24 @@
                 <span class="footer-shimmer-name serif">Boniek Aparicio</span>
                 <span class="footer-shimmer-role">Fotografía</span>
             </div>
-            <h2 class="serif massive-text reveal-text" data-i18n="footer_massive">Tu historia merece<br><em>más</em> que lo ordinario.</h2>
+            <h2 class="serif massive-text reveal-text"><span data-i18n="footer_massive">Tu historia merece<br><em>más</em> que lo ordinario.</span></h2>
             <div class="footer-bottom">
                 <p><span data-i18n="footer_rights">&copy; 2026 Boniek Aparicio. Todos los derechos reservados.</span><br><span class="footer-location" style="opacity: 0.6; font-size: 0.85em;">Plaza Cantabria, Ciudad de Panamá</span></p>
                 <div class="footer-links">
-                    <a href="https://instagram.com/boniekapariciophotos" target="_blank" class="magnetic" data-strength="10" style="display: inline-flex; align-items: center; gap: 0.4rem;">
+                    <a href="https://instagram.com/boniekapariciophotos" target="_blank" rel="noopener noreferrer" class="magnetic" data-strength="10" style="display: inline-flex; align-items: center; gap: 0.4rem;">
                         <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color: #fff;"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>Instagram
                     </a>
-                    <a href="https://wa.me/50769200753" target="_blank" class="magnetic" data-strength="10" style="display: inline-flex; align-items: center; gap: 0.4rem;">
+                    <a href="https://wa.me/50769200753" target="_blank" rel="noopener noreferrer" class="magnetic" data-strength="10" style="display: inline-flex; align-items: center; gap: 0.4rem;">
                         <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" style="color: #fff;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.458 5.704 1.459h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>WhatsApp
                     </a>
                 </div>
             </div>
+            <p class="footer-credit" data-i18n="footer_credit">Diseño y desarrollo por <strong>Bytelabs</strong></p>
         </div>
     </footer>
 
     <!-- Floating WhatsApp Badge -->
-    <a href="https://wa.me/50769200753?text=Hola%20Boniek%2C%20vi%20tu%20p%C3%A1gina%20y%20me%20gustar%C3%ADa%20reservar%20una%20sesi%C3%B3n%20de%20fotos." target="_blank" class="floating-wa magnetic" data-strength="30" aria-label="Contactar por WhatsApp">
+    <a href="https://wa.me/50769200753?text=Hola%20Boniek%2C%20vi%20tu%20p%C3%A1gina%20y%20me%20gustar%C3%ADa%20reservar%20una%20sesi%C3%B3n%20de%20fotos." target="_blank" rel="noopener noreferrer" class="floating-wa magnetic" data-strength="30" aria-label="Contactar por WhatsApp">
         <div class="wa-text-ring">
             <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                 <path id="circlePath" d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" fill="transparent" />
@@ -361,7 +380,7 @@
         </div>
     </a>
 
-    <script defer src="portfolio-data.js?v=10"></script>
-    <script defer src="script.js?v=10"></script>
+    <script defer src="portfolio-data.js?v=11"></script>
+    <script defer src="script.js?v=11"></script>
 </body>
 </html>

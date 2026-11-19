@@ -246,6 +246,7 @@ const translations = {
         form_submit: "Enviar Consulta",
         footer_massive: "Tu historia merece<br><em>más</em> que lo ordinario.",
         footer_rights: "&copy; 2026 Boniek Aparicio. Todos los derechos reservados.",
+        footer_credit: "Diseño y desarrollo por <strong>Bytelabs</strong>",
         footer_privacy: "Privacidad",
         loader_btn: "Entrar"
     },
@@ -306,6 +307,7 @@ const translations = {
         form_submit: "Send Inquiry",
         footer_massive: "Your story deserves<br><em>more</em> than the ordinary.",
         footer_rights: "&copy; 2026 Boniek Aparicio. All rights reserved.",
+        footer_credit: "Design &amp; development by <strong>Bytelabs</strong>",
         footer_privacy: "Privacy",
         loader_btn: "Enter"
     }
@@ -476,7 +478,7 @@ document.addEventListener('click', (e) => {
     if (!item) return;
     const img = item.querySelector('img');
     if (!img || !img.src) return;
-    openLightbox(img.src);
+    openLightbox(img.dataset.full || img.src);
 }, true);
 
 // Teclado: las fotos del portafolio (role="button" tabindex="0") abren con Enter / Espacio.
@@ -486,7 +488,7 @@ document.addEventListener('keydown', (e) => {
     if (!item) return;
     e.preventDefault();
     const img = item.querySelector('img');
-    if (img && img.src) openLightbox(img.src);
+    if (img && img.src) openLightbox(img.dataset.full || img.src);
 });
 
 function attachLightboxListeners() {}
@@ -551,8 +553,11 @@ function startIntro() {
       });
 }
 const heroImg = document.querySelector('.hero-image');
-// decode() falla si la imagen da error; arrancamos igual para no dejar el loader colgado
-(heroImg ? heroImg.decode().catch(() => {}) : Promise.resolve()).then(startIntro);
+// decode() falla si la imagen da error; y como máximo esperamos 2.5s para no dejar el loader colgado
+Promise.race([
+    heroImg ? heroImg.decode().catch(() => {}) : Promise.resolve(),
+    new Promise(r => setTimeout(r, 2500))
+]).then(startIntro);
 
 // REVEALS & PARALLAX
 if (!REDUCE_MOTION) {
@@ -640,7 +645,11 @@ if(premiumForm && btnSubmit) {
                 : `Hi Boniek! I'd like to book a session.\n\n*Name:* ${name}\n*Email:* ${email}\n*Session type:* ${interestText}\n*Estimated date:* ${date || 'TBD'}\n*Details:* ${details}`;
 
             const waUrl = `https://wa.me/50769200753?text=${encodeURIComponent(msg)}`;
-            setTimeout(() => window.open(waUrl, '_blank'), 1200);
+            setTimeout(() => {
+                // Si el navegador bloquea la ventana nueva (Safari/iPhone), abrir en la misma pestaña
+                const w = window.open(waUrl, '_blank');
+                if (w) w.opener = null; else location.href = waUrl;
+            }, 1200);
         } catch(err) {
             console.warn('No se pudo abrir WhatsApp:', err);
         }

@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /CONFIG.md
+Disallow: /CHANGELOG.md
+
+Sitemap: https://boniekapariciophotos.com/sitemap.xml

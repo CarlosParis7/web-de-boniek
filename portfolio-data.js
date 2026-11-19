@@ -114,7 +114,14 @@ const portfolioData = [
     }
 ];
 
-const VIEW_ICON = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>`;
+// Ancho que ocupa cada foto en pantalla: el navegador elige el archivo justo (600, 1000 o 1600px)
+const SIZES = {
+    vertical:   '(max-width: 768px) 92vw, (max-width: 1024px) 46vw, 34vw',
+    horizontal: '(max-width: 768px) 92vw, (max-width: 1024px) 46vw, 50vw',
+    large:      '(max-width: 768px) 92vw, (max-width: 1024px) 46vw, 66vw'
+};
+
+const VIEW_ICON =`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>`;
 
 function renderPortfolioGrid() {
     const grid = document.querySelector('.masonry-grid');
@@ -129,11 +136,12 @@ function renderPortfolioGrid() {
         const offset   = item.offset || '';
         const title    = currentLang === 'ES' ? item.title_es    : item.title_en;
         const location = currentLang === 'ES' ? item.location_es : item.location_en;
+        const base     = item.image.replace(/\.webp$/, '');
 
         const html = `
             <div class="${baseClass} ${offset}" data-id="${item.id}" role="button" tabindex="0" aria-label="Ver foto: ${title}, ${location}">
                 <div class="img-wrapper">
-                    <img src="${item.image}" alt="${title}, ${location}" loading="lazy" decoding="async">
+                    <img src="${item.image}" srcset="${base}-600.webp 600w, ${item.image} 1000w, ${base}-1600.webp 1600w" sizes="${SIZES[item.size] || SIZES.vertical}" data-full="${base}-1600.webp" alt="${title}, ${location}" loading="lazy" decoding="async">
                     <span class="work-tag">${title}</span>
                     <div class="work-view">${VIEW_ICON}</div>
                     <div class="work-meta">

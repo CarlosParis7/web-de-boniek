@@ -1,4 +1,22 @@
-# Netlify: los navegadores guardan las fotos 30 días en caché.
-# Si reemplazas una foto, mejor súbela con otro nombre para que se vea al momento.
+# Cabeceras de seguridad para Netlify (se aplican a toda la web)
+/*
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
+  Cross-Origin-Opener-Policy: same-origin
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests
+
+# Los navegadores guardan las fotos y librerías 30 días en caché.
+# Si reemplazas una foto, súbela con otro nombre para que se vea al momento.
 /images/*
   Cache-Control: public, max-age=2592000
+/vendor/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Notas internas del proyecto: que no aparezcan en Google
+/CONFIG.md
+  X-Robots-Tag: noindex
+/CHANGELOG.md
+  X-Robots-Tag: noindex
