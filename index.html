@@ -27,20 +27,166 @@
     <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96.png">
     <link rel="apple-touch-icon" href="./images/apple-touch-icon.png">
     <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
     {
-        "@context": "https://schema.org",
-        "@type": "ProfessionalService",
-        "name": "Boniek Aparicio Fotografía",
-        "description": "Fotógrafo profesional en Ciudad de Panamá: bodas, retratos, maternidad, parejas y sesiones familiares.",
-        "url": "https://boniekapariciophotos.com/",
-        "image": "https://boniekapariciophotos.com/images/foto-hero.jpg",
-        "telephone": "+50769200753",
-        "address": { "@type": "PostalAddress", "streetAddress": "Plaza Cantabria", "addressLocality": "Ciudad de Panamá", "addressCountry": "PA" },
-        "areaServed": "Panamá",
-        "sameAs": ["https://instagram.com/boniekapariciophotos"]
+      "@type": "WebSite",
+      "@id": "https://boniekapariciophotos.com/#website",
+      "url": "https://boniekapariciophotos.com/",
+      "name": "Boniek Aparicio Photos",
+      "inLanguage": "es-PA",
+      "publisher": {
+        "@id": "https://boniekapariciophotos.com/#negocio"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://boniekapariciophotos.com/#boniek",
+      "name": "Boniek Aparicio",
+      "jobTitle": "Fotógrafo profesional",
+      "nationality": "Panamá",
+      "image": "https://boniekapariciophotos.com/images/foto-hero.jpg",
+      "worksFor": {
+        "@id": "https://boniekapariciophotos.com/#negocio"
+      },
+      "sameAs": [
+        "https://instagram.com/boniekapariciophotos"
+      ]
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://boniekapariciophotos.com/#negocio",
+      "name": "Boniek Aparicio Photos",
+      "alternateName": [
+        "Boniek Aparicio Fotografía",
+        "Boniek Aparicio Fotógrafo"
+      ],
+      "description": "Fotógrafo profesional en Ciudad de Panamá: bodas, retratos, maternidad, parejas, familias y sesiones con traje típico (pollera). Estudio en Plaza Cantabria.",
+      "url": "https://boniekapariciophotos.com/",
+      "image": "https://boniekapariciophotos.com/images/foto-hero.jpg",
+      "logo": "https://boniekapariciophotos.com/images/apple-touch-icon.png",
+      "telephone": "+50769200753",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Plaza Cantabria",
+        "addressLocality": "Ciudad de Panamá",
+        "addressRegion": "Panamá",
+        "addressCountry": "PA"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Ciudad de Panamá"
+        },
+        {
+          "@type": "Country",
+          "name": "Panamá"
+        }
+      ],
+      "founder": {
+        "@id": "https://boniekapariciophotos.com/#boniek"
+      },
+          "knowsAbout": [
+        "Fotografía de bodas",
+        "Fotografía de retrato",
+        "Fotografía de maternidad",
+        "Fotografía familiar",
+        "Fotografía de parejas",
+        "Pollera panameña"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Sesiones de fotos",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Fotografía de bodas",
+              "url": "https://boniekapariciophotos.com/bodas-panama/"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Sesiones de maternidad",
+              "url": "https://boniekapariciophotos.com/maternidad-panama/"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Sesiones con traje típico (pollera)",
+              "url": "https://boniekapariciophotos.com/traje-tipico-panama/"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Retratos y fotografía familiar",
+              "url": "https://boniekapariciophotos.com/retratos-familias-panama/"
+            }
+          }
+        ]
+      },
+      "sameAs": [
+        "https://instagram.com/boniekapariciophotos"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://boniekapariciophotos.com/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Qué tipos de sesiones de fotos haces en Panamá?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Hago fotografía de bodas, retratos, maternidad, parejas, familias y sesiones con traje típico panameño (pollera). Trabajo en mi estudio de Plaza Cantabria, en Ciudad de Panamá, y también en el lugar que escojamos juntos para tu sesión."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Dónde está tu estudio de fotografía?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Mi estudio está en Plaza Cantabria, Ciudad de Panamá. Si prefieres hacer las fotos en otro lugar, lo escogemos juntos antes de la sesión."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo reservo una sesión de fotos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Escríbeme por WhatsApp al +507 6920-0753 o llena el formulario de esta página. Cuéntame qué tipo de sesión quieres, la fecha y el lugar, y te respondo lo antes posible para confirmar disponibilidad."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo recibo mis fotos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Edito cada foto con cuidado y te las entrego en una galería privada en línea, donde puedes verlas, descargarlas y compartirlas desde cualquier lugar."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánta experiencia tienes como fotógrafo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tengo 5 años de experiencia como fotógrafo profesional en Panamá, con más de 1,200 sesiones realizadas y más de 300 clientes."
+          }
+        }
+      ]
     }
+  ]
+}
     </script>
-    <link rel="stylesheet" href="styles.css?v=11">
+    <link rel="stylesheet" href="styles.css?v=12">
     <!-- Preload imagen del Hero (acelera la carga visible) -->
     <link rel="preload" as="image" href="./images/foto-hero.webp" media="(min-width: 769px)">
     <link rel="preload" as="image" href="./images/foto-hero-movil.webp" media="(max-width: 768px)">
@@ -280,21 +426,38 @@
         <div class="container">
             <div class="stats-grid">
                 <div class="stat-item">
-                    <span class="stat-number" data-target="300">0</span><span class="stat-suffix">+</span>
+                    <span class="stat-number" data-target="300">300</span><span class="stat-suffix">+</span>
                     <span class="stat-label" data-i18n="stat_clients">Clientes Felices</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-number" data-target="5">0</span>
+                    <span class="stat-number" data-target="5">5</span>
                     <span class="stat-label" data-i18n="stat_years">Años de Experiencia</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-number" data-target="1200">0</span><span class="stat-suffix">+</span>
+                    <span class="stat-number" data-target="1200">1200</span><span class="stat-suffix">+</span>
                     <span class="stat-label" data-i18n="stat_sessions">Sesiones Realizadas</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-number" data-target="100">0</span><span class="stat-suffix">%</span>
+                    <span class="stat-number" data-target="100">100</span><span class="stat-suffix">%</span>
                     <span class="stat-label" data-i18n="stat_satisfaction">Satisfacción Garantizada</span>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Preguntas frecuentes (el mismo texto va en el schema FAQPage del <head>: si cambias uno, cambia el otro) -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="section-header center">
+                <span class="eyebrow" data-i18n="faq_eyebrow">Preguntas frecuentes</span>
+                <h2 class="serif" data-i18n="faq_title">Lo que más me <em>preguntan</em></h2>
+            </div>
+            <div class="faq-list">
+                <details><summary data-i18n="faq_q1">¿Qué tipos de sesiones de fotos haces en Panamá?</summary><p data-i18n="faq_a1">Hago fotografía de bodas, retratos, maternidad, parejas, familias y sesiones con traje típico panameño (pollera). Trabajo en mi estudio de Plaza Cantabria, en Ciudad de Panamá, y también en el lugar que escojamos juntos para tu sesión.</p></details>
+                <details><summary data-i18n="faq_q2">¿Dónde está tu estudio de fotografía?</summary><p data-i18n="faq_a2">Mi estudio está en Plaza Cantabria, Ciudad de Panamá. Si prefieres hacer las fotos en otro lugar, lo escogemos juntos antes de la sesión.</p></details>
+                <details><summary data-i18n="faq_q3">¿Cómo reservo una sesión de fotos?</summary><p data-i18n="faq_a3">Escríbeme por WhatsApp al +507 6920-0753 o llena el formulario de esta página. Cuéntame qué tipo de sesión quieres, la fecha y el lugar, y te respondo lo antes posible para confirmar disponibilidad.</p></details>
+                <details><summary data-i18n="faq_q4">¿Cómo recibo mis fotos?</summary><p data-i18n="faq_a4">Edito cada foto con cuidado y te las entrego en una galería privada en línea, donde puedes verlas, descargarlas y compartirlas desde cualquier lugar.</p></details>
+                <details><summary data-i18n="faq_q5">¿Cuánta experiencia tienes como fotógrafo?</summary><p data-i18n="faq_a5">Tengo 5 años de experiencia como fotógrafo profesional en Panamá, con más de 1,200 sesiones realizadas y más de 300 clientes.</p></details>
             </div>
         </div>
     </section>
@@ -406,6 +569,6 @@
     </a>
 
     <script defer src="portfolio-data.js?v=11"></script>
-    <script defer src="script.js?v=11"></script>
+    <script defer src="script.js?v=12"></script>
 </body>
 </html>

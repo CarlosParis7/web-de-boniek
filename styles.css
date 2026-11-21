@@ -885,3 +885,15 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
     opacity: 1;
     transform: translateY(0);
 }
+
+/* PREGUNTAS FRECUENTES */
+.faq { padding: 10vw 0; }
+.faq-list { max-width: 800px; margin: 0 auto; }
+.faq details { border-bottom: 1px solid var(--border-color); padding: 1.6rem 0; }
+.faq summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: 1.5rem; font-size: clamp(1.05rem, 1.4vw, 1.25rem); }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; color: var(--text-muted); transition: transform var(--transition-fast); }
+.faq details[open] summary::after { transform: rotate(45deg); }
+.faq details p { color: var(--text-muted); font-weight: 300; margin-top: 1rem; max-width: 65ch; }
+.footer-services a { color: inherit; text-decoration: none; }
+.footer-services a:hover { text-decoration: underline; }
